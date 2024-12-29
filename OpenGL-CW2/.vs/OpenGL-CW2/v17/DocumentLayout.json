@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\USERS\\ARNAS\\GIT\\COMP3016-CW2\\OPENGL-CW2\\OPENGLLIBS\\GLAD\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:OPENGLLIBS\\GLAD\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\USERS\\ARNAS\\GIT\\COMP3016-CW2\\OPENGL-CW2\\OPENGLLIBS\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:OPENGLLIBS\\GLAD.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "glad.h",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad\\glad.h",
+              "RelativeDocumentMoniker": "OpenGLlibs\\glad\\glad.h",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad\\glad.h",
+              "RelativeToolTip": "OpenGLlibs\\glad\\glad.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-29T21:15:27.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-29T21:11:42.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "glad.h",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad.h",
+              "RelativeDocumentMoniker": "OpenGLlibs\\glad.h",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad.h",
+              "RelativeToolTip": "OpenGLlibs\\glad.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-29T21:00:43.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "glad.c",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\glad.c",
+              "RelativeDocumentMoniker": "glad.c",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\glad.c",
+              "RelativeToolTip": "glad.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-12-29T20:58:59.086Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
