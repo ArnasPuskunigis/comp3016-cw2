@@ -21,6 +21,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="STB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SHADER.H">
@@ -28,10 +31,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.fs">
+    <None Include="shader.frag">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="shader.vs">
+    <None Include="shader.vert">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
