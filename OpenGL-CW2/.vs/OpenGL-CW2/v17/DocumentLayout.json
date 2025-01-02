@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABCAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAGsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-29T21:11:42.599Z",
               "EditorCaption": ""
@@ -65,7 +65,7 @@
               "RelativeDocumentMoniker": "shader.vert",
               "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.vert",
               "RelativeToolTip": "shader.vert",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-01T22:05:52.754Z",
               "EditorCaption": ""
@@ -78,7 +78,7 @@
               "RelativeDocumentMoniker": "shader.frag",
               "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.frag",
               "RelativeToolTip": "shader.frag",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-01-01T22:05:53.457Z",
               "EditorCaption": ""
@@ -91,7 +91,7 @@
               "RelativeDocumentMoniker": "SHADER.H",
               "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\SHADER.H",
               "RelativeToolTip": "SHADER.H",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-01T21:50:51.454Z",
               "EditorCaption": ""
@@ -130,8 +130,7 @@
               "RelativeToolTip": "glad.c",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-12-29T20:58:59.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-29T20:58:59.086Z"
             },
             {
               "$type": "Document",
@@ -143,8 +142,7 @@
               "RelativeToolTip": "STB.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-01T22:31:04.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-01T22:31:04.838Z"
             }
           ]
         }
