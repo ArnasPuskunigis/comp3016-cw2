@@ -7,32 +7,16 @@
       "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shaders\\vertex.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:shaders\\vertex.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.frag||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
-      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:shader.frag||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shaders\\fragment.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:shaders\\fragment.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\SHADER.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\USERS\\ARNAS\\GIT\\COMP3016-CW2\\OPENGL-CW2\\SHADER.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:SHADER.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\STB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:STB.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0B99649B-203A-41F5-97C9-84C9C3E955B0}|OpenGL-CW2.vcxproj|solutionrelative:glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGLlibs\\glad\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:OpenGLlibs\\glad.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SHADER.h",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\SHADER.h",
+              "RelativeDocumentMoniker": "SHADER.h",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\SHADER.h",
+              "RelativeToolTip": "SHADER.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-05T16:45:15.803Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -52,7 +49,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AQIAAL0AAAAAAAAAAAAswPcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-29T21:11:42.599Z",
               "EditorCaption": ""
@@ -60,88 +57,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "shader.vert",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.vert",
-              "RelativeDocumentMoniker": "shader.vert",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.vert",
-              "RelativeToolTip": "shader.vert",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Title": "vertex.vert",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shaders\\vertex.vert",
+              "RelativeDocumentMoniker": "shaders\\vertex.vert",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shaders\\vertex.vert",
+              "RelativeToolTip": "shaders\\vertex.vert",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-01T22:05:52.754Z",
+              "WhenOpened": "2025-01-05T16:03:50.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "shader.frag",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.frag",
-              "RelativeDocumentMoniker": "shader.frag",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shader.frag",
-              "RelativeToolTip": "shader.frag",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
+              "Title": "fragment.frag",
+              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shaders\\fragment.frag",
+              "RelativeDocumentMoniker": "shaders\\fragment.frag",
+              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\shaders\\fragment.frag",
+              "RelativeToolTip": "shaders\\fragment.frag",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-01T22:05:53.457Z",
+              "WhenOpened": "2025-01-05T16:03:50.012Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SHADER.H",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\SHADER.H",
-              "RelativeDocumentMoniker": "SHADER.H",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\SHADER.H",
-              "RelativeToolTip": "SHADER.H",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-01T21:50:51.454Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "glad.h",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad\\glad.h",
-              "RelativeDocumentMoniker": "OpenGLlibs\\glad\\glad.h",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad\\glad.h",
-              "RelativeToolTip": "OpenGLlibs\\glad\\glad.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-29T21:15:27.503Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "glad.h",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad.h",
-              "RelativeDocumentMoniker": "OpenGLlibs\\glad.h",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\OpenGLlibs\\glad.h",
-              "RelativeToolTip": "OpenGLlibs\\glad.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-29T21:00:43.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "glad.c",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\glad.c",
-              "RelativeDocumentMoniker": "glad.c",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\glad.c",
-              "RelativeToolTip": "glad.c",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-12-29T20:58:59.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "STB.cpp",
-              "DocumentMoniker": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\STB.cpp",
-              "RelativeDocumentMoniker": "STB.cpp",
-              "ToolTip": "C:\\Users\\Arnas\\GIT\\comp3016-cw2\\OpenGL-CW2\\STB.cpp",
-              "RelativeToolTip": "STB.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-01T22:31:04.838Z"
             }
           ]
         }

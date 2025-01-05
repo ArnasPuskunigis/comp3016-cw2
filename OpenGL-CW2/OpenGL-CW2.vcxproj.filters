@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\Shaders">
+      <UniqueIdentifier>{af46ced7-02e7-42c0-8894-22910e83e42c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -26,16 +29,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SHADER.H">
-      <Filter>Source Files</Filter>
-    </ClInclude>
+    <None Include="shaders\fragment.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shaders\vertex.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.frag">
+    <ClInclude Include="SHADER.h">
       <Filter>Source Files</Filter>
-    </None>
-    <None Include="shader.vert">
-      <Filter>Source Files</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
 </Project>
