@@ -67,7 +67,7 @@ int main()
     //Enable depth testing
     glEnable(GL_DEPTH_TEST);
 
-    // camera
+    //Camera
     Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
     float lastX = 800 / 2.0f;
     float lastY = 800/ 2.0f;
@@ -86,72 +86,6 @@ int main()
     
     //Model rock("rock/Rock07-Base.obj");
     Model rock("tank/m26.obj");
-
-    //Plane vertices with texture coordinates
-    float planeVertices[] = {
-        //Vertex positions    //Texture coordinates
-        -0.5f,  0.0f, -0.5f,  0.0f, 0.0f,
-         0.5f,  0.0f, -0.5f,  1.0f, 0.0f,
-         0.5f,  0.0f,  0.5f,  1.0f, 1.0f,
-        -0.5f,  0.0f,  0.5f,  0.0f, 1.0f
-    };
-
-    //Plane indices for optimisation
-    unsigned int planeIndices[] = {
-        0, 1, 2,
-        2, 3, 0
-    };
-
-    //Create and generate texture object for the plane
-    unsigned int planeTexture;
-    glGenTextures(1, &planeTexture);
-
-    //Cofigure the plane texture settings
-    glBindTexture(GL_TEXTURE_2D, planeTexture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    //Load the container.jpg texture and generate the mipmaps
-    int width, height, nrChannels;
-    unsigned char* data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    //If this failed, ouput an error message
-    else
-    {
-        std::cout << "Could not load the texture for the plane" << std::endl;
-    }
-    //Free memory
-    stbi_image_free(data);
-
-    //Create VAO, VBO, and EBO for the plane
-    unsigned int planeVAO, planeVBO, planeEBO;
-    glGenVertexArrays(1, &planeVAO);
-    glGenBuffers(1, &planeVBO);
-    glGenBuffers(1, &planeEBO);
-
-    glBindVertexArray(planeVAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, planeVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(planeVertices), planeVertices, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, planeEBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(planeIndices), planeIndices, GL_STATIC_DRAW);
-
-    //Position attribute for the plane
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    //Texture coordinates attribute for the plane
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-    glBindVertexArray(0);
 
     //View matrix for camera, "translates" it to (0.0f, -1.5f, -5.0f)
     glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.5f, -5.0f));
@@ -177,18 +111,6 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         //glEnable(GL_CULL_FACE); //Discards all back-facing triangles
 
-        shaderProgram.use();
-
-        //Bind the texture for the plane
-        glBindTexture(GL_TEXTURE_2D, planeTexture);
-        //Set the scale to 4 on x and z axis
-        shaderProgram.setMat4("model", glm::scale(glm::mat4(1.0f), glm::vec3(4.0f, 1.0f, 4.0f)));
-        //Bind the vao for rendering
-        glBindVertexArray(planeVAO);
-        //Draw the plane
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-        //Enable correct shader for the camera uniforms and model drawing
         shaderProgram1.use();
 
         glm::mat4 projection = glm::perspective(glm::radians(90.0f), (float)800 / (float)800, 0.1f, 100.0f);
@@ -204,29 +126,16 @@ int main()
         shaderProgram1.setMat4("model", model);
         rock.Draw(shaderProgram1);
 
-
         //Draw the elements created to the window
         glfwSwapBuffers(window);
         //Process events
         glfwPollEvents();
     }
 
-    //Clean up ====
-
     //Clean up the resources used for the window
     glfwTerminate();
-
-    //Clean up the resouces used for the textures
-    glDeleteTextures(1, &planeTexture);
-
-    //Clean up the resouces used for the buffers and vertex array objects for the plane
-    glDeleteBuffers(1, &planeVBO);
-    glDeleteBuffers(1, &planeEBO);
-    glDeleteVertexArrays(1, &planeVAO);
-
     //Delete the shader program
     glDeleteProgram(shaderProgram.ID);
-
     //Exit code
     return 0;
 }
@@ -238,22 +147,55 @@ void processInput(GLFWwindow* window)
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
+    //Forwards movement
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
         glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
-        glm::vec3 forwardDirection = glm::vec3(rotationMatrix * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f)); 
-        tankPosition += forwardDirection * tankSpeed;  
+        glm::vec3 forwardDirection = glm::vec3(rotationMatrix * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+        tankPosition += forwardDirection * tankSpeed;
+        //Forwards + Right movement
+        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+            rotationAngle += 1.0f;
+        }
+        //Forwards + Left movement
+        else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+            rotationAngle -= 1.0f;
+        }
+        //Just rotating left
+        else if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+            rotationAngle += 1.0f;
+        }
+        //Just rotating right
+        else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+            rotationAngle -= 1.0f;
+        }
     }
+    
+    
 
+    //Backwards movement
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
         glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
         glm::vec3 forwardDirection = glm::vec3(rotationMatrix * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
         tankPosition += forwardDirection * -tankSpeed;
+        //Backwards + Right movement
+        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+            rotationAngle -= 1.0f;
+        }
+        //Backwards + Left movement
+        else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+            rotationAngle += 1.0f;
+        }
+        //Just rotating left
+        else if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+            rotationAngle += 1.0f;
+        }
+        //Just rotating right
+        else if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+            rotationAngle -= 1.0f;
+        }
     }
 
-    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        rotationAngle += 1.0f;
-    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        rotationAngle -= 1.0f;
+
 }
 
 //Window resize
