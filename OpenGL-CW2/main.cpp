@@ -34,6 +34,9 @@ vec3 tankPosition = vec3(0.0f, -1.2f, -2.0f);
 float tankSpeed = 0.05f;
 float rotationAngle = 0.0f;
 
+//vec3 cameraPosition = vec3(0.0f, 0.0f, 3.0f);
+//float cameraSpeed = 0.1f;
+
 int main()
 {
     //Initialize GLFW and set up OpenGL
@@ -149,6 +152,7 @@ void processInput(GLFWwindow* window)
 
     //Forwards movement
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+        //Calculate the forward direction
         glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
         glm::vec3 forwardDirection = glm::vec3(rotationMatrix * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
         tankPosition += forwardDirection * tankSpeed;
@@ -169,8 +173,6 @@ void processInput(GLFWwindow* window)
             rotationAngle -= 1.0f;
         }
     }
-    
-    
 
     //Backwards movement
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
