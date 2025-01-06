@@ -30,6 +30,9 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 //User Input
 void processInput(GLFWwindow* window);
 
+vec3 tankPosition = vec3(0.0f, -1.2f, -2.0f);
+float tankSpeed = 0.05f;
+
 int main()
 {
     //Initialize GLFW and set up OpenGL
@@ -80,7 +83,8 @@ int main()
     /*shaderProgram1.use();
     shaderProgram.use();*/
     
-    Model rock("rock/Rock07-Base-Obj/Rock07-Base.obj");
+    //Model rock("rock/Rock07-Base.obj");
+    Model rock("tank/m26.obj");
 
     //Plane vertices with texture coordinates
     float planeVertices[] = {
@@ -97,33 +101,9 @@ int main()
         2, 3, 0
     };
 
-    // Cube vertices with texture coordinates
-    float cubeVertices[] = {
-        //Vertex positions    //Texture coordinates
-        -0.5f,  0.5f, -0.5f,  0.0f, 0.0f,
-         0.5f,  0.5f, -0.5f,  1.0f, 0.0f,
-         0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-         0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-         0.5f, -0.5f,  0.5f,  1.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 1.0f 
-    };
-
-    //Cube indices for optimisation
-    unsigned int cubeIndices[] = {
-        0, 1, 2, 2, 3, 0,
-        4, 5, 6, 6, 7, 4,
-        0, 1, 5, 5, 4, 0,
-        2, 3, 7, 7, 6, 2,
-        0, 3, 7, 7, 4, 0,
-        1, 2, 6, 6, 5, 1
-    };
-
     //Create and generate texture object for the plane
-    unsigned int planeTexture, cubeTexture;
+    unsigned int planeTexture;
     glGenTextures(1, &planeTexture);
-    glGenTextures(1, &cubeTexture);
 
     //Cofigure the plane texture settings
     glBindTexture(GL_TEXTURE_2D, planeTexture);
@@ -144,28 +124,6 @@ int main()
     else
     {
         std::cout << "Could not load the texture for the plane" << std::endl;
-    }
-    //Free memory
-    stbi_image_free(data);
-
-    //Cofigure the cube texture settings
-    glBindTexture(GL_TEXTURE_2D, cubeTexture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    //Load the awesomeface.png texture and generate the mipmaps
-    data = stbi_load("awesomeface.png", &width, &height, &nrChannels, 0);
-    if (data)
-    {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    //If this failed, ouput an error message
-    else
-    {
-        std::cout << "Failed to load cube texture" << std::endl;
     }
     //Free memory
     stbi_image_free(data);
@@ -194,30 +152,6 @@ int main()
 
     glBindVertexArray(0);
 
-    // Create VAO, VBO, and EBO for the cube
-    unsigned int cubeVAO, cubeVBO, cubeEBO;
-    glGenVertexArrays(1, &cubeVAO);
-    glGenBuffers(1, &cubeVBO);
-    glGenBuffers(1, &cubeEBO);
-
-    glBindVertexArray(cubeVAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(cubeVertices), cubeVertices, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cubeEBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cubeIndices), cubeIndices, GL_STATIC_DRAW);
-
-    //Position attribute for the cube
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    //Texture coordinates attribute cube
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-    glBindVertexArray(0);
-
     //View matrix for camera, "translates" it to (0.0f, -1.5f, -5.0f)
     glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.5f, -5.0f));
     //Projectiojn matrix, adds perspective, mainly fov
@@ -240,27 +174,20 @@ int main()
         //Reset
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glEnable(GL_CULL_FACE); //Discards all back-facing triangles
+        //glEnable(GL_CULL_FACE); //Discards all back-facing triangles
 
-        ////Bind the texture for the plane
-        //glBindTexture(GL_TEXTURE_2D, planeTexture);
-        ////Set the scale to 4 on x and z axis
-        //shaderProgram.setMat4("model", glm::scale(glm::mat4(1.0f), glm::vec3(4.0f, 1.0f, 4.0f)));
-        ////Bind the vao for rendering
-        //glBindVertexArray(planeVAO);
-        ////Draw the plane
-        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        shaderProgram.use();
 
-        ////Bind the texture for the cube
-        //glBindTexture(GL_TEXTURE_2D, cubeTexture);
-        ////Move the cube up so that it is on the plane
-        //shaderProgram.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.5f, 0.0f)));
-        ////Bind the vao for rendering
-        //glBindVertexArray(cubeVAO);
-        ////Draw the cube 
-        //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+        //Bind the texture for the plane
+        glBindTexture(GL_TEXTURE_2D, planeTexture);
+        //Set the scale to 4 on x and z axis
+        shaderProgram.setMat4("model", glm::scale(glm::mat4(1.0f), glm::vec3(4.0f, 1.0f, 4.0f)));
+        //Bind the vao for rendering
+        glBindVertexArray(planeVAO);
+        //Draw the plane
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-        // don't forget to enable shader before setting uniforms
+        //Enable correct shader for the camera uniforms and model drawing
         shaderProgram1.use();
 
         glm::mat4 projection = glm::perspective(glm::radians(90.0f), (float)800 / (float)800, 0.1f, 100.0f);
@@ -270,8 +197,9 @@ int main()
 
         // render the loaded model
         glm::mat4 model = glm::mat4(1.0f);
-        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
-        model = glm::scale(model, glm::vec3(0.025f, 0.025f, 0.025f));	// it's a bit too big for our scene, so scale it down
+        model = glm::translate(model, tankPosition); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
+        model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
         shaderProgram1.setMat4("model", model);
         rock.Draw(shaderProgram1);
 
@@ -289,17 +217,11 @@ int main()
 
     //Clean up the resouces used for the textures
     glDeleteTextures(1, &planeTexture);
-    glDeleteTextures(1, &cubeTexture);
 
     //Clean up the resouces used for the buffers and vertex array objects for the plane
     glDeleteBuffers(1, &planeVBO);
     glDeleteBuffers(1, &planeEBO);
     glDeleteVertexArrays(1, &planeVAO);
-
-    //Clean up the resouces used for the buffers and vertex array objects for the cube
-    glDeleteBuffers(1, &cubeVBO);
-    glDeleteBuffers(1, &cubeEBO);
-    glDeleteVertexArrays(1, &cubeVAO);
 
     //Delete the shader program
     glDeleteProgram(shaderProgram.ID);
@@ -314,6 +236,7 @@ void processInput(GLFWwindow* window)
     //End the loop if Escape pressed
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+
 }
 
 //Window resize
