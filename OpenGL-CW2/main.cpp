@@ -236,7 +236,14 @@ void processInput(GLFWwindow* window)
     //End the loop if Escape pressed
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
-
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
+        tankPosition.z += -tankSpeed;
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
+        tankPosition.z += tankSpeed;
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
+        tankPosition.x += -tankSpeed;
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+        tankPosition.x += tankSpeed;
 }
 
 //Window resize
