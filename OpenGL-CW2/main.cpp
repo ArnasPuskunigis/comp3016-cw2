@@ -2,12 +2,28 @@
 #include <glfw3.h>
 #include <stb_image.h>
 
+
+//GLAD
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "SHADER.h"
+//GLM
+#include "glm/ext/vector_float3.hpp"
+#include <glm/gtc/type_ptr.hpp> //Access to the value_ptr
+
+#include "camera.h"
+
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
+#include "shader_m.h"
+#include "model.h"
+
 #include <iostream>
+
+using namespace glm;
 
 //Resizing screen
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -47,9 +63,24 @@ int main()
     //Enable depth testing
     glEnable(GL_DEPTH_TEST);
 
+    // camera
+    Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+    float lastX = 800 / 2.0f;
+    float lastY = 800/ 2.0f;
+    bool firstMouse = true;
+
     //Compile shaders into a program using a prewritten header file from : "https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader.h"
     Shader shaderProgram("Shaders/vertex.vert", "Shaders/fragment.frag");
     //==========================
+    shaderProgram.use();
+
+    //Compile shaders into a program using a prewritten header file from : "https://learnopengl.com/code_viewer_gh.php?code=includes/learnopengl/shader.h"
+    Shader shaderProgram1("Shaders/obj.vert", "Shaders/obj.frag");
+    //==========================
+    /*shaderProgram1.use();
+    shaderProgram.use();*/
+    
+    Model rock("rock/Rock07-Base-Obj/Rock07-Base.obj");
 
     //Plane vertices with texture coordinates
     float planeVertices[] = {
@@ -187,7 +218,6 @@ int main()
 
     glBindVertexArray(0);
 
-
     //View matrix for camera, "translates" it to (0.0f, -1.5f, -5.0f)
     glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, -1.5f, -5.0f));
     //Projectiojn matrix, adds perspective, mainly fov
@@ -200,6 +230,7 @@ int main()
     shaderProgram.setMat4("view", view);
     shaderProgram.setMat4("projection", projection);
 
+
     //Render loop!!
     while (!glfwWindowShouldClose(window))
     {
@@ -209,24 +240,41 @@ int main()
         //Reset
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glEnable(GL_CULL_FACE); //Discards all back-facing triangles
 
-        //Bind the texture for the plane
-        glBindTexture(GL_TEXTURE_2D, planeTexture);
-        //Set the scale to 4 on x and z axis
-        shaderProgram.setMat4("model", glm::scale(glm::mat4(1.0f), glm::vec3(4.0f, 1.0f, 4.0f)));
-        //Bind the vao for rendering
-        glBindVertexArray(planeVAO);
-        //Draw the plane
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        ////Bind the texture for the plane
+        //glBindTexture(GL_TEXTURE_2D, planeTexture);
+        ////Set the scale to 4 on x and z axis
+        //shaderProgram.setMat4("model", glm::scale(glm::mat4(1.0f), glm::vec3(4.0f, 1.0f, 4.0f)));
+        ////Bind the vao for rendering
+        //glBindVertexArray(planeVAO);
+        ////Draw the plane
+        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-        //Bind the texture for the cube
-        glBindTexture(GL_TEXTURE_2D, cubeTexture);
-        //Move the cube up so that it is on the plane
-        shaderProgram.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.5f, 0.0f)));
-        //Bind the vao for rendering
-        glBindVertexArray(cubeVAO);
-        //Draw the cube 
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+        ////Bind the texture for the cube
+        //glBindTexture(GL_TEXTURE_2D, cubeTexture);
+        ////Move the cube up so that it is on the plane
+        //shaderProgram.setMat4("model", glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.5f, 0.0f)));
+        ////Bind the vao for rendering
+        //glBindVertexArray(cubeVAO);
+        ////Draw the cube 
+        //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+        // don't forget to enable shader before setting uniforms
+        shaderProgram1.use();
+
+        glm::mat4 projection = glm::perspective(glm::radians(90.0f), (float)800 / (float)800, 0.1f, 100.0f);
+        glm::mat4 view = camera.GetViewMatrix();
+        shaderProgram1.setMat4("projection", projection);
+        shaderProgram1.setMat4("view", view);
+
+        // render the loaded model
+        glm::mat4 model = glm::mat4(1.0f);
+        model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f)); // translate it down so it's at the center of the scene
+        model = glm::scale(model, glm::vec3(0.025f, 0.025f, 0.025f));	// it's a bit too big for our scene, so scale it down
+        shaderProgram1.setMat4("model", model);
+        rock.Draw(shaderProgram1);
+
 
         //Draw the elements created to the window
         glfwSwapBuffers(window);

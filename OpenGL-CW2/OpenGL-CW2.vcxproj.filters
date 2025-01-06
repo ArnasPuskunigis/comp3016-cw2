@@ -35,9 +35,27 @@
     <None Include="shaders\vertex.vert">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="shaders\obj.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shaders\obj.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SHADER.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shader_m.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shader2.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
