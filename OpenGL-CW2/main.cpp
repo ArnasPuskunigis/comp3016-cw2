@@ -32,6 +32,7 @@ void processInput(GLFWwindow* window);
 
 vec3 tankPosition = vec3(0.0f, -1.2f, -2.0f);
 float tankSpeed = 0.05f;
+float rotationAngle = 0.0f;
 
 int main()
 {
@@ -199,7 +200,7 @@ int main()
         glm::mat4 model = glm::mat4(1.0f);
         model = glm::translate(model, tankPosition); // translate it down so it's at the center of the scene
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));	// it's a bit too big for our scene, so scale it down
-        model = glm::rotate(model, glm::radians(45.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        model = glm::rotate(model, glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
         shaderProgram1.setMat4("model", model);
         rock.Draw(shaderProgram1);
 
@@ -233,17 +234,26 @@ int main()
 //Input
 void processInput(GLFWwindow* window)
 {
-    //End the loop if Escape pressed
+    //End the game loop if Escape pressed
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
-    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        tankPosition.z += -tankSpeed;
-    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        tankPosition.z += tankSpeed;
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+        glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
+        glm::vec3 forwardDirection = glm::vec3(rotationMatrix * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f)); 
+        tankPosition += forwardDirection * tankSpeed;  
+    }
+
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(rotationAngle), glm::vec3(0.0f, 1.0f, 0.0f));
+        glm::vec3 forwardDirection = glm::vec3(rotationMatrix * glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+        tankPosition += forwardDirection * -tankSpeed;
+    }
+
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        tankPosition.x += -tankSpeed;
+        rotationAngle += 1.0f;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        tankPosition.x += tankSpeed;
+        rotationAngle -= 1.0f;
 }
 
 //Window resize
