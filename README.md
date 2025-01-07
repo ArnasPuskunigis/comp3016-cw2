@@ -3,7 +3,7 @@
 #Youtube link for the code walkthough:
 https://youtu.be/Z1j9MWXhmC0
 
-#How to run the project
+# How to run the project
 - Download the Release.Zip file
 - Extract it into your desktop
 - Open the "Release" folder
