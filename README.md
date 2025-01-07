@@ -10,7 +10,7 @@ https://youtu.be/Z1j9MWXhmC0
 - Run the "OpenGL-CW2.Exe" File
 
 ## Game
-This is an OpenGL project where  you control a tank and/or a camera which you find in a procedurally generated terrain. You can use the camera to explore this terrain.
+This is an OpenGL project where  you control a tank and/or a camera which you find in a procedurally generated terrain. You can use the camera to explore this terrain or have a closer look at the tank and crates.
 
 ### Controls
 - W - To move the tank forwards
