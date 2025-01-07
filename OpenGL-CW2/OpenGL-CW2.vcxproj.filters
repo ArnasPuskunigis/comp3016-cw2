@@ -61,5 +61,8 @@
     <ClInclude Include="camera.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="FastNoiseLite.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
