@@ -26,12 +26,10 @@ This is an OpenGL project where  you control a tank and/or a camera which you fi
 - A - To rotate the camera leftwards
 - D - To rotate the camera rightwards
 
-## Images
-
-## Terrain
-
-## Tank
-
-## Crates
-
 ## Resources
+These are the resources which I used to create this project:
+- Assimp - https://github.com/assimp/assimp
+- OpenGL- https://learnopengl.com/Getting-started/
+- GLFW - https://www.glfw.org/ 
+- GLAD - https://glad.dav1d.de/ 
+- CMAKE - https://cmake.org/ 
