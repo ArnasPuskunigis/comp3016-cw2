@@ -32,7 +32,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 3
-map_Kd green.png
+map_Kd tank_texture_diffuse3.png
 
 newmtl metal_black
 Ns 323.999994
