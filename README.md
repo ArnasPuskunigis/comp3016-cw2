@@ -1,4 +1,4 @@
-# comp3016-cw2
+# COMP3016 - CW2 - OpenGL - TANK
 
 ## Youtube link for the code walkthough:
 https://youtu.be/Z1j9MWXhmC0
