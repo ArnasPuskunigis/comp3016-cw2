@@ -35,10 +35,10 @@
     <None Include="shaders\vertex.vert">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="shaders\obj.frag">
+    <None Include="shaders\terrain.frag">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="shaders\obj.vert">
+    <None Include="shaders\terrain.vert">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

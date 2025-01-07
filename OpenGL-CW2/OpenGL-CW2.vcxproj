@@ -139,8 +139,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\fragment.frag" />
-    <None Include="shaders\obj.frag" />
-    <None Include="shaders\obj.vert" />
+    <None Include="shaders\terrain.frag" />
+    <None Include="shaders\terrain.vert" />
     <None Include="shaders\vertex.vert" />
   </ItemGroup>
   <ItemGroup>
