@@ -12,6 +12,18 @@ https://youtu.be/Z1j9MWXhmC0
 ## Game
 This is an OpenGL project where  you control a tank and/or a camera which you find in a procedurally generated terrain. You can use the camera to explore this terrain or have a closer look at the tank and crates.
 
+### Features
+
+- You can drive around as a tank
+- You can fly around as the camera
+- There are models which are loaded
+- There are models which are animated
+- There are textures
+- There is a procedurally generated terrain which also contains biomes
+- There is a cube
+- There is some error checking
+- There is some optimisation
+
 ### Controls
 - W - To move the tank forwards
 - S - To move the tank backwards
