@@ -9,10 +9,21 @@ https://youtu.be/Z1j9MWXhmC0
 - Open the "Release" folder
 - Run the "OpenGL-CW2.Exe" File
 
-
 ## Game
 
-## Controls
+### Controls
+- W - To move the tank forwards
+- S - To move the tank backwards
+- A - To rotate the tank leftwards
+- D - To rotate the tank rightwards
+
+- Mouse - To look around
+
+- C - To switch between camera controls and tank controls
+- W - To move the camera forwards
+- S - To move the camera backwards
+- A - To rotate the camera leftwards
+- D - To rotate the camera rightwards
 
 ## Images
 
@@ -21,7 +32,5 @@ https://youtu.be/Z1j9MWXhmC0
 ## Tank
 
 ## Crates
-
-## Dependencies
 
 ## Resources
