@@ -1,27 +1,27 @@
 # comp3016-cw2
 
-#Youtube link for the code walkthough:
+## Youtube link for the code walkthough:
 https://youtu.be/Z1j9MWXhmC0
 
-# How to run the project
+## How to run the project
 - Download the Release.Zip file
 - Extract it into your desktop
 - Open the "Release" folder
 - Run the "OpenGL-CW2.Exe" File
 
 
-#Game
+## Game
 
-#Controls
+## Controls
 
-#Images
+## Images
 
-#Terrain
+## Terrain
 
-#Tank
+## Tank
 
-#Crates
+## Crates
 
-#Dependencies
+## Dependencies
 
-#Resources
+## Resources
